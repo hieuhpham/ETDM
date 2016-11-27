@@ -1,0 +1,57 @@
+{% extends "base-thoughts.html" %}
+{% block content %}    
+
+
+
+<form class = "form-group" action = "/thoughts-reports" method = "POST">
+
+  <div class="col-xs-5">
+      <div class="input-group" >
+          <input type="text" class="form-control" placeholder="Search for ..." name="query"/>
+          <span class="input-group-btn">
+            <input class="btn btn-success" type = "submit" value = "submit query" />
+          </span>
+      </div>  <!-- /input-group -->
+  </div>  <!-- /.col-lg-6 -->
+</form>
+
+<br>
+<br>
+<p style="padding-left:20px;"> It will take about 3-4 minutes for the data mining and statistical learning analysis</p>
+
+<div style="background-color:white;color:black;padding:10px;">
+  <h4> Case Examples: </h4>
+  <a href="/thoughts-examples/global-warming" class="image"><img style="width:280px;height:150; padding:10px;" src="/static/examples/years_gw.png" /></a>
+  <a href="/thoughts-examples/neural-networks" class="image"><img style="width:280px;height:150;padding:10px;" src="/static/examples/years_nn.png" /></a>
+  <a href="/thoughts-examples/lithium-air" class="image"><img style="width:280px;height:150;padding:10px;" src="/static/examples/years_lab.png" /></a>
+</div>
+
+<hr>
+
+
+<div style="background-color:white;color:black;padding:10px;">
+  <h3 style="text-align:center;"> Description of Learning and Statistical Analysis</h3>
+
+  <p style="text-align:justify;"> Provided the search query or topic of interests as an user input, the app will perform the data and text mining from <a href ="http://www.crossref.org/">CrossRef</a> using its REST API. Firstly, it will collect the metadata of 10000 most relevant articles (including their titles, publication date, author list and citation records). Useful statistics and learning will then be extracted based on this data mining. Specifically, the overall behavior of publication status is simulated by MCMC (Markov-Chain Monte Carlo) and future performance is predicted with Time-Series ARIMA model (Autoregressive Integrated Moving Average). <p>
+
+  <p style="text-align:justify;"> At the next level, natural language processing (NLP) will be used to analyze the text, composed of the article titles, to explore the evolution of concepts within that particular topic over the course of the previous decades. Finally the outstanding trend for upcoming years will be projected (by ARIMA model on most frequent vocabulary).</p>
+
+</div>
+
+
+<div class='matplotlib'>
+    <p style="text-align:center;"><img src="static/examples/workflow.png" align="absmiddle" style="width:800px; "> </p>
+</div>
+
+
+
+<p style="padding-left:10px; font-size:100%"> Link to source code on <a href ="https://github.com/hieuhpham/Evolution_of_Thoughts_from_DTM"> Github  </a></p>
+
+<hr>
+
+<a href="/" style="padding-left:10px;">Back to Home </a>
+
+<br><br>
+
+
+{% endblock %}

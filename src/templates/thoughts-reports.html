@@ -1,0 +1,45 @@
+{% extends "base-thoughts.html" %}
+{% block content %}    
+
+
+<div class=page>
+  <h4> {{results}} </h4>
+</div>
+
+
+<p style="font-size:130%; text-align:center" > <b><br> Statistics of Top Authors </p>
+
+<div class='matplotlib'>
+    <p style="text-align:center;"> <img src="static/temp/{{authors_plot}}" style="width:1000px;height:320px;"> </p>
+</div>
+
+<hr>
+
+<p style="font-size:130%; text-align:center"> <b><br> Statistics of Publication Status and Time-Series Predictions</p>
+
+<div class='matplotlib'>
+<p style="text-align:center;"> <img src="static/temp/{{years_plot}}" style="width:1000px;height:340px;"> </p>
+</div>
+
+<hr>
+
+<p style="font-size:130%; text-align:center"> <b><br> Occurence of Most Common Words </p>
+<p style="text-align:center;"><img src="static/temp/{{words_plot}}" style="width:1000px;height:350px;"></p>
+
+<hr>
+
+<!-- This is a comment #F2F3F4, #E5E7E9, #D7DBDD-->
+<p style="font-size:130%; text-align:center"> <b><br> EVOLUTION OF CONCEPTS </p>
+<p style="font-size:130%; text-align:left"> <b> The following will be presented: </p>
+<p style="font-size:120%;"> &#9729;  Cloud Five Decades Ago ({{since}}-{{since+9}}) </p>
+<p style="font-size:120%;"> &#9729;  Cloud of the Last Decade ({{today-10}}-{{today-1}}) </p>
+<p style="font-size:120%;"> &#9730;  Projected Word Cloud for the Next Five Years ({{today}}-{{today+5}}) </p>
+
+<img src="static/temp/{{cloud1}}" style="width:331px;height:320px;">
+<img src="static/temp/{{cloud2}}" style="width:331px;height:320px;">
+<img src="static/temp/{{cloud3}}" style="width:331px;height:320px;">
+
+<hr>
+<a href="/thoughts" style="padding-left:0px;">Back to Search</a>
+<br><br>
+{% endblock %}
