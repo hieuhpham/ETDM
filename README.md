@@ -1,6 +1,6 @@
 ## Evolution of Thoughts from Scholarly Resources
 
-Link to app [website](http://www.hieuhpham.com/thoughts)
+Link to app [demo](http://www.hieuhpham.com/thoughts)
 
 
 <p style="text-align:justify;"> Provided the search query or topic of interests as an user input, the app will perform the data and text mining from <a href ="http://www.crossref.org/">CrossRef</a> using its REST API. Firstly, it will collect the metadata of 10000 most relevant articles (including their titles, publication date, author list and citation records). Useful statistics and learning will then be extracted based on this data mining. Specifically, the revolution year (i.e. time when publication status changes its bahavior) is captured by MCMC simulation (Markov-Chain Monte Carlo) and the future performance will be predicted with Time-Series ARIMA model (Autoregressive Integrated Moving Average). <p>
